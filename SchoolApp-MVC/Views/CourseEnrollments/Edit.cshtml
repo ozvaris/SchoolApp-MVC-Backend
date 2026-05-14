@@ -1,0 +1,36 @@
+@model SchoolApp_MVC.Dtos.CourseEnrollments.CourseEnrollmentUpdateDto
+
+@{
+    ViewData["Title"] = "Edit Course Enrollment";
+}
+
+<h1>Edit Course Enrollment</h1>
+
+<div class="mb-3">
+    <dl class="row">
+        <dt class="col-sm-2">Course</dt>
+        <dd class="col-sm-10">@ViewData["CourseName"]</dd>
+        <dt class="col-sm-2">Student</dt>
+        <dd class="col-sm-10">@ViewData["StudentName"]</dd>
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@ViewData["StudentEmail"]</dd>
+    </dl>
+</div>
+
+<form asp-action="Edit" asp-route-id="@Model.CourseEnrollmentID" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="CourseEnrollmentID" />
+
+    <div class="mb-3">
+        <label asp-for="EnrollmentDate" class="form-label"></label>
+        <input asp-for="EnrollmentDate" class="form-control" type="date" />
+        <span asp-validation-for="EnrollmentDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" asp-route-courseId="@ViewData["CourseID"]" class="btn btn-secondary">Back to List</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

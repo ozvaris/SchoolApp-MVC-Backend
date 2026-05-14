@@ -1,12 +1,13 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556F}") = "SchoolApp-DAL", "SchoolApp-DAL\SchoolApp-DAL.csproj", "{56D286DD-18D2-400F-A3EE-60FA8EAF7B6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolApp-DAL", "SchoolApp-DAL\SchoolApp-DAL.csproj", "{A9F062D1-0A5D-48F0-9BC5-B9DFECF502C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556F}") = "SchoolApp-Backend", "SchoolApp-Backend\SchoolApp-Backend.csproj", "{8998BFB9-BFB2-41B9-8A0C-9803A68021D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolApp-Backend", "SchoolApp-Backend\SchoolApp-Backend.csproj", "{83374680-D568-4EF8-865B-175035D4A3AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556F}") = "SchoolApp-MVC", "SchoolApp-MVC\SchoolApp-MVC.csproj", "{A2F1598F-FA72-4EA3-84C8-17A39BDDC037}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolApp-MVC", "SchoolApp-MVC\SchoolApp-MVC.csproj", "{82CD161F-E018-4303-88D2-9CBE94EFED22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,17 +18,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{56D286DD-18D2-400F-A3EE-60FA8EAF7B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56D286DD-18D2-400F-A3EE-60FA8EAF7B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56D286DD-18D2-400F-A3EE-60FA8EAF7B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56D286DD-18D2-400F-A3EE-60FA8EAF7B6E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8998BFB9-BFB2-41B9-8A0C-9803A68021D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8998BFB9-BFB2-41B9-8A0C-9803A68021D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8998BFB9-BFB2-41B9-8A0C-9803A68021D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8998BFB9-BFB2-41B9-8A0C-9803A68021D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2F1598F-FA72-4EA3-84C8-17A39BDDC037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2F1598F-FA72-4EA3-84C8-17A39BDDC037}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2F1598F-FA72-4EA3-84C8-17A39BDDC037}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2F1598F-FA72-4EA3-84C8-17A39BDDC037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F062D1-0A5D-48F0-9BC5-B9DFECF502C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F062D1-0A5D-48F0-9BC5-B9DFECF502C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F062D1-0A5D-48F0-9BC5-B9DFECF502C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F062D1-0A5D-48F0-9BC5-B9DFECF502C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83374680-D568-4EF8-865B-175035D4A3AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83374680-D568-4EF8-865B-175035D4A3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83374680-D568-4EF8-865B-175035D4A3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83374680-D568-4EF8-865B-175035D4A3AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82CD161F-E018-4303-88D2-9CBE94EFED22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82CD161F-E018-4303-88D2-9CBE94EFED22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82CD161F-E018-4303-88D2-9CBE94EFED22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82CD161F-E018-4303-88D2-9CBE94EFED22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

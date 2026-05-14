@@ -15,6 +15,10 @@ builder.Services.AddHttpClient<IStudentApiClient, StudentApiClient>(client =>
 {
     client.BaseAddress = new Uri(backendApiBaseUrl);
 });
+builder.Services.AddHttpClient<ICourseEnrollmentApiClient, CourseEnrollmentApiClient>(client =>
+{
+    client.BaseAddress = new Uri(backendApiBaseUrl);
+});
 
 var app = builder.Build();
 
