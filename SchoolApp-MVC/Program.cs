@@ -1,16 +1,20 @@
-using SchoolApp_DAL.Data;
-using SchoolApp_DAL.Data.Interfaces;
-using SchoolApp_MVC.Services;
-using SchoolApp_MVC.Services.Interfaces;
+using SchoolApp_MVC.ApiClients;
+using SchoolApp_MVC.ApiClients.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<ICourseRepository, CourseRepository>();
-builder.Services.AddScoped<IStudentRepository, StudentRepository>();
-builder.Services.AddScoped<ICourseService, CourseService>();
-builder.Services.AddScoped<IStudentService, StudentService>();
+
+var backendApiBaseUrl = builder.Configuration["BackendApi:BaseUrl"] ?? "http://localhost:5114/";
+builder.Services.AddHttpClient<ICourseApiClient, CourseApiClient>(client =>
+{
+    client.BaseAddress = new Uri(backendApiBaseUrl);
+});
+builder.Services.AddHttpClient<IStudentApiClient, StudentApiClient>(client =>
+{
+    client.BaseAddress = new Uri(backendApiBaseUrl);
+});
 
 var app = builder.Build();
 

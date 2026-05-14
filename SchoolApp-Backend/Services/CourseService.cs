@@ -1,9 +1,9 @@
+using SchoolApp_Backend.Dtos.Courses;
+using SchoolApp_Backend.Services.Interfaces;
 using SchoolApp_DAL.Data.Interfaces;
 using SchoolApp_DAL.Models;
-using SchoolApp_MVC.Dtos.Courses;
-using SchoolApp_MVC.Services.Interfaces;
 
-namespace SchoolApp_MVC.Services;
+namespace SchoolApp_Backend.Services;
 
 public class CourseService : ICourseService
 {
@@ -28,7 +28,8 @@ public class CourseService : ICourseService
 
     public async Task<(bool Success, string? ErrorMessage)> CreateAsync(CourseCreateDto dto)
     {
-        var existing = await _repository.GetByCodeAsync(dto.CourseCode.Trim());
+        var courseCode = dto.CourseCode.Trim().ToUpperInvariant();
+        var existing = await _repository.GetByCodeAsync(courseCode);
         if (existing is not null)
         {
             return (false, "Course code already exists.");
@@ -37,7 +38,7 @@ public class CourseService : ICourseService
         var course = new Course
         {
             CourseName = dto.CourseName.Trim(),
-            CourseCode = dto.CourseCode.Trim().ToUpperInvariant(),
+            CourseCode = courseCode,
             CourseCredit = dto.CourseCredit
         };
 
@@ -53,14 +54,15 @@ public class CourseService : ICourseService
             return (false, "Course not found.");
         }
 
-        var duplicateCodeCourse = await _repository.GetByCodeAsync(dto.CourseCode.Trim());
+        var courseCode = dto.CourseCode.Trim().ToUpperInvariant();
+        var duplicateCodeCourse = await _repository.GetByCodeAsync(courseCode);
         if (duplicateCodeCourse is not null && duplicateCodeCourse.CourseID != id)
         {
             return (false, "Course code already exists.");
         }
 
         existingCourse.CourseName = dto.CourseName.Trim();
-        existingCourse.CourseCode = dto.CourseCode.Trim().ToUpperInvariant();
+        existingCourse.CourseCode = courseCode;
         existingCourse.CourseCredit = dto.CourseCredit;
 
         var updated = await _repository.UpdateAsync(existingCourse);

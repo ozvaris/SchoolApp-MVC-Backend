@@ -1,6 +1,6 @@
-using SchoolApp_MVC.Dtos.Courses;
+using SchoolApp_Backend.Dtos.Courses;
 
-namespace SchoolApp_MVC.Services.Interfaces;
+namespace SchoolApp_Backend.Services.Interfaces;
 
 public interface ICourseService
 {

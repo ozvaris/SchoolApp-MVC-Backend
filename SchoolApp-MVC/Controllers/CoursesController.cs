@@ -1,27 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
+using SchoolApp_MVC.ApiClients.Interfaces;
 using SchoolApp_MVC.Dtos.Courses;
-using SchoolApp_MVC.Services.Interfaces;
 
 namespace SchoolApp_MVC.Controllers;
 
 public class CoursesController : Controller
 {
-    private readonly ICourseService _courseService;
+    private readonly ICourseApiClient _courseApiClient;
 
-    public CoursesController(ICourseService courseService)
+    public CoursesController(ICourseApiClient courseApiClient)
     {
-        _courseService = courseService;
+        _courseApiClient = courseApiClient;
     }
 
     public async Task<IActionResult> Index()
     {
-        var courses = await _courseService.GetAllAsync();
+        var courses = await _courseApiClient.GetAllAsync();
         return View(courses);
     }
 
     public async Task<IActionResult> Details(int id)
     {
-        var course = await _courseService.GetByIdAsync(id);
+        var course = await _courseApiClient.GetByIdAsync(id);
         if (course is null)
         {
             return NotFound();
@@ -44,7 +44,7 @@ public class CoursesController : Controller
             return View(dto);
         }
 
-        var result = await _courseService.CreateAsync(dto);
+        var result = await _courseApiClient.CreateAsync(dto);
         if (!result.Success)
         {
             ModelState.AddModelError(string.Empty, result.ErrorMessage ?? "Create operation failed.");
@@ -57,7 +57,7 @@ public class CoursesController : Controller
 
     public async Task<IActionResult> Edit(int id)
     {
-        var course = await _courseService.GetByIdAsync(id);
+        var course = await _courseApiClient.GetByIdAsync(id);
         if (course is null)
         {
             return NotFound();
@@ -88,7 +88,7 @@ public class CoursesController : Controller
             return View(dto);
         }
 
-        var result = await _courseService.UpdateAsync(id, dto);
+        var result = await _courseApiClient.UpdateAsync(id, dto);
         if (!result.Success)
         {
             ModelState.AddModelError(string.Empty, result.ErrorMessage ?? "Update operation failed.");
@@ -101,7 +101,7 @@ public class CoursesController : Controller
 
     public async Task<IActionResult> Delete(int id)
     {
-        var course = await _courseService.GetByIdAsync(id);
+        var course = await _courseApiClient.GetByIdAsync(id);
         if (course is null)
         {
             return NotFound();
@@ -114,7 +114,7 @@ public class CoursesController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
-        var deleted = await _courseService.DeleteAsync(id);
+        var deleted = await _courseApiClient.DeleteAsync(id);
         if (!deleted)
         {
             return NotFound();

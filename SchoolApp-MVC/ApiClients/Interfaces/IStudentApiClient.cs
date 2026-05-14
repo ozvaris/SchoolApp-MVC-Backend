@@ -1,8 +1,8 @@
 using SchoolApp_MVC.Dtos.Students;
 
-namespace SchoolApp_MVC.Services.Interfaces;
+namespace SchoolApp_MVC.ApiClients.Interfaces;
 
-public interface IStudentService
+public interface IStudentApiClient
 {
     Task<IReadOnlyList<StudentReadDto>> GetAllAsync();
     Task<StudentReadDto?> GetByIdAsync(int id);

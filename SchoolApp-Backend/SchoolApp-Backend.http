@@ -1,6 +1,11 @@
 @SchoolApp_Backend_HostAddress = http://localhost:5114
 
-GET {{SchoolApp_Backend_HostAddress}}/weatherforecast/
+GET {{SchoolApp_Backend_HostAddress}}/api/students
+Accept: application/json
+
+###
+
+GET {{SchoolApp_Backend_HostAddress}}/api/courses
 Accept: application/json
 
 ###

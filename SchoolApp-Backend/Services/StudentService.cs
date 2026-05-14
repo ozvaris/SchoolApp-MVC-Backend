@@ -1,9 +1,9 @@
+using SchoolApp_Backend.Dtos.Students;
+using SchoolApp_Backend.Services.Interfaces;
 using SchoolApp_DAL.Data.Interfaces;
 using SchoolApp_DAL.Models;
-using SchoolApp_MVC.Dtos.Students;
-using SchoolApp_MVC.Services.Interfaces;
 
-namespace SchoolApp_MVC.Services;
+namespace SchoolApp_Backend.Services;
 
 public class StudentService : IStudentService
 {
