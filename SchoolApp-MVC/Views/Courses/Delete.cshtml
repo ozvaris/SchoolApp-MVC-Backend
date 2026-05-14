@@ -1,0 +1,32 @@
+@model SchoolApp_MVC.Dtos.Courses.CourseReadDto
+
+@{
+    ViewData["Title"] = "Delete Course";
+}
+
+<h1>Delete Course</h1>
+<hr />
+
+<div class="alert alert-danger">
+    Are you sure you want to delete this course?
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.CourseID</dd>
+
+    <dt class="col-sm-2">Name</dt>
+    <dd class="col-sm-10">@Model.CourseName</dd>
+
+    <dt class="col-sm-2">Code</dt>
+    <dd class="col-sm-10">@Model.CourseCode</dd>
+
+    <dt class="col-sm-2">Credit</dt>
+    <dd class="col-sm-10">@Model.CourseCredit</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.CourseID" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,25 @@
+@model SchoolApp_MVC.Dtos.Courses.CourseReadDto
+
+@{
+    ViewData["Title"] = "Course Details";
+}
+
+<h1>Course Details</h1>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.CourseID</dd>
+
+    <dt class="col-sm-2">Name</dt>
+    <dd class="col-sm-10">@Model.CourseName</dd>
+
+    <dt class="col-sm-2">Code</dt>
+    <dd class="col-sm-10">@Model.CourseCode</dd>
+
+    <dt class="col-sm-2">Credit</dt>
+    <dd class="col-sm-10">@Model.CourseCredit</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.CourseID" class="btn btn-warning">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

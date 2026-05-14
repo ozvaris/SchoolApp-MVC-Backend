@@ -1,0 +1,43 @@
+@model SchoolApp_MVC.Dtos.Courses.CourseCreateDto
+
+@{
+    ViewData["Title"] = "Create Course";
+}
+
+<h1>Create Course</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="CourseName" class="form-label"></label>
+                <input asp-for="CourseName" class="form-control" />
+                <span asp-validation-for="CourseName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CourseCode" class="form-label"></label>
+                <input asp-for="CourseCode" class="form-control" />
+                <span asp-validation-for="CourseCode" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CourseCredit" class="form-label"></label>
+                <input asp-for="CourseCredit" class="form-control" />
+                <span asp-validation-for="CourseCredit" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
