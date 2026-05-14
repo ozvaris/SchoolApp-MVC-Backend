@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolApp-MVC", "SchoolApp-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolApp-DAL", "SchoolApp-DAL\SchoolApp-DAL.csproj", "{FB4727F8-F372-4B98-B556-7DE07C159ACA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolApp-Backend", "SchoolApp-Backend\SchoolApp-Backend.csproj", "{8711A656-76D1-4419-B978-B346873DA0AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FB4727F8-F372-4B98-B556-7DE07C159ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB4727F8-F372-4B98-B556-7DE07C159ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB4727F8-F372-4B98-B556-7DE07C159ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8711A656-76D1-4419-B978-B346873DA0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8711A656-76D1-4419-B978-B346873DA0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8711A656-76D1-4419-B978-B346873DA0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8711A656-76D1-4419-B978-B346873DA0AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
