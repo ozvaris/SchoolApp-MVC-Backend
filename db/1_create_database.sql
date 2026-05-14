@@ -1,5 +1,0 @@
-IF DB_ID(N'SchoolAppDb') IS NULL
-BEGIN
-    CREATE DATABASE [SchoolAppDb];
-END
-GO
